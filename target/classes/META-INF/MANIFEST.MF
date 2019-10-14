@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: PE_L3a_Oauth
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: HD5052014
+Implementation-Vendor-Id: PE_L3a_Oauth
+Build-Jdk: 1.8.0_181
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/PE_L3a_Oauth
+Created-By: Maven Integration for Eclipse
+
