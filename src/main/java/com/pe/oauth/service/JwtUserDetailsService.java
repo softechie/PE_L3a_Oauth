@@ -3,7 +3,6 @@ package com.pe.oauth.service;
 import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -39,4 +38,10 @@ public class JwtUserDetailsService implements UserDetailsService {
 		newUser.setPassword(bcryptEncoder.encode(user.getPassword()));
 		return userDao.save(newUser);
 	}
+	/*
+	 * public DAOUser get(DAOUser user) { DAOUser newUser = new DAOUser();
+	 * newUser.setUsername(user.getUser());
+	 * newUser.setPassword(bcryptEncoder.encode(user.getPassword())); return
+	 * userDao.save(newUser); }
+	 */
 }

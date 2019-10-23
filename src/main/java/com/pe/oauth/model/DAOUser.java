@@ -12,11 +12,17 @@ public class DAOUser {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	@Column
-	private String username;
+	private  String username;
 	@Column
 	@JsonIgnore
 	private String password;
+	//private String token;
 
+	
+	/*
+	 * public static void setUser(String token,String username) { token=token;
+	 * username = username; } public static String getUser() { return username; }
+	 */
 	public String getUsername() {
 		return username;
 	}
