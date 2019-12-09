@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.pe.oauth.config.JwtTokenUtil;
-import com.pe.oauth.model.DAOUser;
+import com.pe.oauth.model.UserModel;
 import com.pe.oauth.model.JwtRequest;
 import com.pe.oauth.model.JwtResponse;
 import com.pe.oauth.model.UserDTO;

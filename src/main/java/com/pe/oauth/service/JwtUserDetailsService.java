@@ -9,22 +9,22 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import com.pe.oauth.dao.UserDao;
-import com.pe.oauth.model.DAOUser;
+import com.pe.oauth.model.UserModel;
 import com.pe.oauth.model.UserDTO;
+import com.pe.oauth.repo.UserRepo;
 
 @Service
 public class JwtUserDetailsService implements UserDetailsService {
 	
 	@Autowired
-	private UserDao userDao;
+	private UserRepo userDao;
 
 	@Autowired
 	private PasswordEncoder bcryptEncoder;
 
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-		DAOUser user = userDao.findByUsername(username);
+		UserModel user = userDao.findByUsername(username);
 		if (user == null) {
 			throw new UsernameNotFoundException("User not found with username: " + username);
 		}
@@ -32,8 +32,8 @@ public class JwtUserDetailsService implements UserDetailsService {
 				new ArrayList<>());
 	}
 	
-	public DAOUser save(UserDTO user) {
-		DAOUser newUser = new DAOUser();
+	public UserModel save(UserDTO user) {
+		UserModel newUser = new UserModel();
 		newUser.setUsername(user.getUsername());
 		newUser.setPassword(bcryptEncoder.encode(user.getPassword()));
 		return userDao.save(newUser);
